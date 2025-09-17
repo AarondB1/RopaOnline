@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxe Line</title>
+  <link rel="stylesheet" href="estilos.css">
+  <!-- Agregar Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Overlay de animación inicial -->
+  <div class="splash-screen" id="splashScreen">
+    <div class="splash-content">
+      <div class="logo-animation">
+        <span class="logo-letter">L</span>
+        <span class="logo-letter">U</span>
+        <span class="logo-letter">X</span>
+        <span class="logo-letter">E</span>
+        <span class="logo-divider"></span>
+        <span class="logo-letter">L</span>
+        <span class="logo-letter">I</span>
+        <span class="logo-letter">N</span>
+        <span class="logo-letter">E</span>
+      </div>
+      <p>Style that defines you</p>
+    </div>
+  </div>
+
+  <header class="hero" id="inicio">
+    <nav class="nav-bar">
+      <h1>Luxe Line</h1>
+      
+      <!-- Barra de búsqueda -->
+      <div class="search-container">
+        <form class="search-form" id="searchForm">
+          <input type="text" placeholder="Buscar productos..." class="search-input" id="searchInput">
+          <button type="submit" class="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </form>
+        <div class="search-results" id="searchResults"></div>
+      </div>
+      
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <ul class="menu" id="menu">
+        <li><a href="index.html" class="menu-link">Inicio</a></li>
+        <li><a href="prendas.html" class="menu-link">Prendas</a></li>
+        <li><a href="pedido.html" class="menu-link">Pedido</a></li>
+        <li><a href="nosotros.html" class="menu-link">Nosotros</a></li>
+        <!-- Icono del carrito -->
+        <li>
+          <a href="#" class="menu-link cart-icon" id="cartIcon">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h2>Your dream outfit, just a click away</h2>
+      <p>Tu outfit ideal</p>
+      <a class="btn" href="#prendas">Ver productos</a>
+    </div>
+  </header>
+
+  <!-- Carrito de compras -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Tu Carrito</h3>
+      <button class="close-cart" id="closeCart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Los productos agregados aparecerán aquí -->
+    </div>
+    <div class="cart-total">
+      <p>Total: <span id="cartTotal">S/0.00</span></p>
+      <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <!-- CARRUSEL INTEGRADO AQUÍ -->
+  <section class="carousel-section">
+    <div class="carousel-container">
+      <div class="carousel-slide">
+        <div class="carousel-item">
+          <img src="img/Casaca1.webp" alt="The North Face">
+          <div class="carousel-caption">
+            <h3>The North Face</h3>
+            <p>S/80.00</p>
+            <button class="add-to-cart-btn" data-id="1" data-name="The North Face" data-price="80.00" data-img="img/Casaca1.webp">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/Camisa2.webp" alt="Camisa">
+          <div class="carousel-caption">
+            <h3>Camisa</h3>
+            <p>S/100.00</p>
+            <button class="add-to-cart-btn" data-id="2" data-name="Camisa" data-price="100.00" data-img="img/Camisa2.webp">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/Pantalon2.webp" alt="Pantalon de Vestir">
+          <div class="carousel-caption">
+            <h3>Pantalon de Vestir</h3>
+            <p>S/85.00</p>
+            <button class="add-to-cart-btn" data-id="3" data-name="Pantalon de Vestir" data-price="85.00" data-img="img/Pantalon2.webp">Agregar al carrito</button>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/Zapato4.jpg" alt="Zapatos">
+          <div class="carousel-caption">
+            <h3>Zapato</h3>
+            <p>S/89.90</p>
+            <button class="add-to-cart-btn" data-id="4" data-name="Zapato" data-price="89.90" data-img="img/Zapato4.jpg">Agregar al carrito</button>
+          </div>
+        </div>
+      </div>
+      
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+      
+      <div class="carousel-indicators">
+        <div class="indicator active"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+        <div class="indicator"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prendas" class="productos">
+    <h2>Prendas en descuento</h2>
+    <div class="grid-productos">
+      <div class="card">
+        <img src="img/Prenda1.webp" alt="Polera Tommy Hilfiger">
+        <h3>Polera-Tommy Hilfiger</h3>
+        <p>S/80.00</p>
+        <button class="add-to-cart-btn" data-id="5" data-name="Polera Tommy Hilfiger" data-price="80.00" data-img="img/Prenda1.webp">Agregar</button>
+      </div>
+      <div class="card">
+        <img src="img/Prenda2.jpg" alt="Chaqueta">
+        <h3>Chaqueta</h3>
+        <p>S/100.00</p>
+        <button class="add-to-cart-btn" data-id="6" data-name="Chaqueta" data-price="100.00" data-img="img/Prenda2.jpg">Agregar</button>
+      </div>
+      <div class="card">
+        <img src="img/Prenda3.webp" alt="Pantalon de Vestir">
+        <h3>Pantalon de Vestir</h3>
+        <p>S/85.00</p>
+        <button class="add-to-cart-btn" data-id="7" data-name="Pantalon de Vestir" data-price="85.00" data-img="img/Prenda3.webp">Agregar</button>
+      </div>
+      <div class="card">
+        <img src="img/Prenda4.webp" alt="Zapato">
+        <h3>Zapato</h3>
+        <p>S/89.90</p>
+        <button class="add-to-cart-btn" data-id="8" data-name="Zapato" data-price="89.90" data-img="img/Prenda4.webp">Agregar</button>
+      </div>
+      <div class="card">
+        <img src="img/Prenda5.avif" alt="Playeras">
+        <h3>Playeras</h3>
+        <p>S/69.90</p>
+        <button class="add-to-cart-btn" data-id="9" data-name="Playeras" data-price="69.90" data-img="img/Prenda5.avif">Agregar</button>
+      </div>
+      <div class="card">
+        <img src="img/Prenda6.avif" alt="Shorts WARDROBE">
+        <h3>Shorts WARDROBE</h3>
+        <p>S/49.00</p>
+        <button class="add-to-cart-btn" data-id="10" data-name="Shorts WARDROBE" data-price="49.00" data-img="img/Prenda6.avif">Agregar</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="promo">
+    <h2>20% de descuento en tu primer pedido</h2>
+    <p>¡Tu estilo, ahora más barato!</p>
+    <button id="promoBtn">Pedir ahora</button>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <h3>Contacto</h3>
+        <p>📞 970 253 397</p>
+        <p>📞 947 308 995</p>
+        <p>📧 linelux@gmail.com</p>
+      </div>
+      <div>
+        <h3>Redes</h3>
+        <p>Facebook · Instagram · WhatsApp · Tik Tok</p>
+      </div>
+      <div>
+        <h3>Explora</h3>
+        <p><a href="index.html">Inicio</a> · <a href="prendas.html">Prendas</a> · <a href="pedido.html">Pedido</a> · <a href="nosotros.html">Nosotros</a></p>
+      </div>
+    </div>
+    <p class="copy">&copy; 2025 Luxe Line. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // JavaScript para la animación inicial
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mostrar animación de marca al cargar
+      setTimeout(function() {
+        document.getElementById('splashScreen').classList.add('fade-out');
+        setTimeout(function() {
+          document.getElementById('splashScreen').style.display = 'none';
+        }, 1000);
+      }, 3000); // Mostrar durante 3 segundos
+
+      // Base de datos de productos para búsqueda
+      const productos = [
+        { id: 1, name: "The North Face", price: 80.00, img: "img/Casaca1.webp", category: "Casacas" },
+        { id: 2, name: "Camisa", price: 100.00, img: "img/Camisa2.webp", category: "Camisas" },
+        { id: 3, name: "Pantalon de Vestir", price: 85.00, img: "img/Pantalon2.webp", category: "Pantalones" },
+        { id: 4, name: "Zapato", price: 89.90, img: "img/Zapato4.jpg", category: "Zapatos" },
+        { id: 5, name: "Polera Tommy Hilfiger", price: 80.00, img: "img/Prenda1.webp", category: "Poleras" },
+        { id: 6, name: "Chaqueta", price: 100.00, img: "img/Prenda2.jpg", category: "Chaquetas" },
+        { id: 7, name: "Pantalon de Vestir", price: 85.00, img: "img/Prenda3.webp", category: "Pantalones" },
+        { id: 8, name: "Zapato", price: 89.90, img: "img/Prenda4.webp", category: "Zapatos" },
+        { id: 9, name: "Playeras", price: 69.90, img: "img/Prenda5.avif", category: "Playeras" },
+        { id: 10, name: "Shorts WARDROBE", price: 49.00, img: "img/Prenda6.avif", category: "Shorts" }
+      ];
+
+      // Funcionalidad de búsqueda
+      const searchForm = document.getElementById('searchForm');
+      const searchInput = document.getElementById('searchInput');
+      const searchResults = document.getElementById('searchResults');
+
+      searchForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        performSearch();
+      });
+
+      searchInput.addEventListener('input', function() {
+        if (this.value.length > 2) {
+          performSearch();
+        } else {
+          searchResults.style.display = 'none';
+          searchResults.innerHTML = '';
+        }
+      });
+
+      function performSearch() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        
+        if (searchTerm.length < 2) {
+          searchResults.style.display = 'none';
+          return;
+        }
+
+        const filteredProducts = productos.filter(product => 
+          product.name.toLowerCase().includes(searchTerm) || 
+          product.category.toLowerCase().includes(searchTerm)
+        );
+
+        displaySearchResults(filteredProducts);
+      }
+
+      function displaySearchResults(results) {
+        searchResults.innerHTML = '';
+        
+        if (results.length === 0) {
+          searchResults.innerHTML = '<div class="search-result-item">No se encontraron productos</div>';
+        } else {
+          results.forEach(product => {
+            const resultItem = document.createElement('div');
+            resultItem.classList.add('search-result-item');
+            resultItem.innerHTML = `
+              <img src="${product.img}" alt="${product.name}">
+              <div class="search-result-info">
+                <h4>${product.name}</h4>
+                <p>S/${product.price.toFixed(2)}</p>
+              </div>
+            `;
+            
+            resultItem.addEventListener('click', function() {
+              // Scroll to the product section
+              document.getElementById('prendas').scrollIntoView({ behavior: 'smooth' });
+              searchInput.value = '';
+              searchResults.style.display = 'none';
+            });
+            
+            searchResults.appendChild(resultItem);
+          });
+        }
+        
+        searchResults.style.display = 'block';
+      }
+
+      // Cerrar resultados al hacer clic fuera
+      document.addEventListener('click', function(e) {
+        if (!searchForm.contains(e.target)) {
+          searchResults.style.display = 'none';
+        }
+      });
+
+      // Resto del código para carrusel, menú hamburguesa, etc.
+      const slide = document.querySelector('.carousel-slide');
+      const items = document.querySelectorAll('.carousel-item');
+      const prevBtn = document.querySelector('.prev');
+      const nextBtn = document.querySelector('.next');
+      const indicators = document.querySelectorAll('.indicator');
+      
+      let currentIndex = 0;
+      const totalItems = items.length;
+      
+      // Función para actualizar el carrusel
+      function updateCarousel() {
+        slide.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Actualizar indicadores
+        indicators.forEach((indicator, index) => {
+          if (index === currentIndex) {
+            indicator.classList.add('active');
+          } else {
+            indicator.classList.remove('active');
+          }
+        });
+      }
+      
+      // Event listeners para botones
+      nextBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+      });
+      
+      prevBtn.addEventListener('click', function() {
+        currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+        updateCarousel();
+      });
+      
+      // Event listeners para indicadores
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', function() {
+          currentIndex = index;
+          updateCarousel();
+        });
+      });
+      
+      // Auto slide cada 5 segundos
+      setInterval(function() {
+        currentIndex = (currentIndex + 1) % totalItems;
+        updateCarousel();
+      }, 5000);
+      
+      // Manejar el envío del formulario
+      const form = document.getElementById('pedido-form');
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          alert('¡Pedido enviado con éxito! Nos contactaremos contigo pronto.');
+          form.reset();
+        });
+      }
+
+      // JavaScript para el menú hamburguesa
+      const hamburger = document.getElementById('hamburger');
+      const menu = document.getElementById('menu');
+
+      if (hamburger && menu) {
+        hamburger.addEventListener('click', function() {
+          menu.classList.toggle('active');
+          hamburger.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        const menuLinks = document.querySelectorAll('.menu-link');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+          });
+        });
+      }
+
+      // Funcionalidad del carrito de compras
+      const cartIcon = document.getElementById('cartIcon');
+      const cartSidebar = document.getElementById('cartSidebar');
+      const closeCart = document.getElementById('closeCart');
+      const cartOverlay = document.getElementById('cartOverlay');
+      const cartItems = document.getElementById('cartItems');
+      const cartCount = document.getElementById('cartCount');
+      const cartTotal = document.getElementById('cartTotal');
+      const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+      const checkoutBtn = document.getElementById('checkoutBtn');
+      const promoBtn = document.getElementById('promoBtn');
+
+      let cart = [];
+
+      // Abrir carrito
+      cartIcon.addEventListener('click', function(e) {
+        e.preventDefault();
+        cartSidebar.classList.add('active');
+        cartOverlay.classList.add('active');
+      });
+
+      // Cerrar carrito
+      closeCart.addEventListener('click', closeCartFunction);
+      cartOverlay.addEventListener('click', closeCartFunction);
+
+      function closeCartFunction() {
+        cartSidebar.classList.remove('active');
+        cartOverlay.classList.remove('active');
+      }
+
+      // Agregar productos al carrito
+      addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const id = this.dataset.id;
+          const name = this.dataset.name;
+          const price = parseFloat(this.dataset.price);
+          const img = this.dataset.img;
+          
+          // Verificar si el producto ya está en el carrito
+          const existingItem = cart.find(item => item.id === id);
+          
+          if (existingItem) {
+            existingItem.quantity++;
+          } else {
+            cart.push({
+              id,
+              name,
+              price,
+              img,
+              quantity: 1
+            });
+          }
+          
+          updateCart();
+          
+          // Animación de confirmación
+          this.classList.add('added');
+          setTimeout(() => {
+            this.classList.remove('added');
+          }, 1000);
+        });
+      });
+
+      // Actualizar carrito
+      function updateCart() {
+        cartItems.innerHTML = '';
+        let total = 0;
+        let count = 0;
+        
+        if (cart.length === 0) {
+          cartItems.innerHTML = '<p class="empty-cart">Tu carrito está vacío</p>';
+        } else {
+          cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            count += item.quantity;
+            
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+            cartItem.innerHTML = `
+              <img src="${item.img}" alt="${item.name}">
+              <div class="cart-item-details">
+                <h4>${item.name}</h4>
+                <p>S/${item.price.toFixed(2)} x ${item.quantity}</p>
+              </div>
+              <div class="cart-item-actions">
+                <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                <span>${item.quantity}</span>
+                <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                <button class="remove-btn" data-id="${item.id}">&times;</button>
+              </div>
+            `;
+            
+            cartItems.appendChild(cartItem);
+          });
+        }
+        
+        cartCount.textContent = count;
+        cartTotal.textContent = `S/${total.toFixed(2)}`;
+        
+        // Agregar event listeners a los botones de cantidad y eliminar
+        document.querySelectorAll('.decrease').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const id = this.dataset.id;
+            const item = cart.find(item => item.id === id);
+            if (item.quantity > 1) {
+              item.quantity--;
+            } else {
+              cart = cart.filter(item => item.id !== id);
+            }
+            updateCart();
+          });
+        });
+        
+        document.querySelectorAll('.increase').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const id = this.dataset.id;
+            const item = cart.find(item => item.id === id);
+            item.quantity++;
+            updateCart();
+          });
+        });
+        
+        document.querySelectorAll('.remove-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const id = this.dataset.id;
+            cart = cart.filter(item => item.id !== id);
+            updateCart();
+          });
+        });
+      }
+
+      // Finalizar compra
+      checkoutBtn.addEventListener('click', function() {
+        if (cart.length === 0) {
+          alert('Tu carrito está vacío. Agrega algunos productos primero.');
+          return;
+        }
+        
+        alert('¡Gracias por tu compra! Serás redirigido para completar el pago.');
+        cart = [];
+        updateCart();
+        closeCartFunction();
+      });
+
+      // Botón de promoción
+      if (promoBtn) {
+        promoBtn.addEventListener('click', function() {
+          cartSidebar.classList.add('active');
+          cartOverlay.classList.add('active');
+        });
+      }
+
+      // Inicializar carrito
+      updateCart();
+    });
+  </script>
+</body>
+</html>

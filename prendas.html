@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Prendas - Luxe Line</title>
+  <link rel="stylesheet" href="estilos.css">
+  <!-- Agregar Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Overlay de animación inicial -->
+  <div class="splash-screen" id="splashScreen">
+    <div class="splash-content">
+      <div class="logo-animation">
+        <span class="logo-letter">L</span>
+        <span class="logo-letter">U</span>
+        <span class="logo-letter">X</span>
+        <span class="logo-letter">E</span>
+        <span class="logo-divider"></span>
+        <span class="logo-letter">L</span>
+        <span class="logo-letter">I</span>
+        <span class="logo-letter">N</span>
+        <span class="logo-letter">E</span>
+      </div>
+      <p>Style that defines you</p>
+    </div>
+  </div>
+
+  <nav class="nav-bar">
+    <h1>Luxe Line</h1>
+    
+    <button class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="menu" id="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="prendas.html">Prendas</a></li>
+      <li><a href="pedido.html">Pedido</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+      <!-- Icono del carrito -->
+      <li>
+        <a href="#" class="cart-icon" id="cartIcon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Carrito de compras -->
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Tu Carrito</h3>
+      <button class="close-cart" id="closeCart">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <!-- Los productos agregados aparecerán aquí -->
+    </div>
+    <div class="cart-total">
+      <p>Total: <span id="cartTotal">S/0.00</span></p>
+      <button class="checkout-btn" id="checkoutBtn">Finalizar Compra</button>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <div class="container prendas-container">
+    <h2>Nuestras Prendas</h2>
+    <div class="grid-productos">
+
+      <div class="card">
+        <img src="img/Prenda1.webp" alt="Polera Tommy Hilfiger">
+        <h3>Polera Tommy Hilfiger</h3>
+        <p>S/80.00</p>
+        <button class="add-to-cart-btn" data-id="1" data-name="Polera Tommy Hilfiger" data-price="80.00" data-img="img/Prenda1.webp">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="img/Prenda2.jpg" alt="Chaqueta">
+        <h3>Chaqueta</h3>
+        <p>S/100.00</p>
+        <button class="add-to-cart-btn" data-id="2" data-name="Chaqueta" data-price="100.00" data-img="img/Prenda2.jpg">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="img/Prenda3.webp" alt="Pantalon de Vestir">
+        <h3>Pantalon de Vestir</h3>
+        <p>S/85.00</p>
+        <button class="add-to-cart-btn" data-id="3" data-name="Pantalon de Vestir" data-price="85.00" data-img="img/Prenda3.webp">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="img/Prenda4.webp" alt="Zapato">
+        <h3>Zapato</h3>
+        <p>S/89.90</p>
+        <button class="add-to-cart-btn" data-id="4" data-name="Zapato" data-price="89.90" data-img="img/Prenda4.webp">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="img/Prenda5.avif" alt="Playeras">
+        <h3>Playeras</h3>
+        <p>S/69.90</p>
+        <button class="add-to-cart-btn" data-id="5" data-name="Playeras" data-price="69.90" data-img="img/Prenda5.avif">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="img/Prenda6.avif" alt="Shorts WARDROBE">
+        <h3>Shorts WARDROBE</h3>
+        <p>S/49.00</p>
+        <button class="add-to-cart-btn" data-id="6" data-name="Shorts WARDROBE" data-price="49.00" data-img="img/Prenda6.avif">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="img/Chalinas.jpg" alt="Chalinas">
+        <h3>Chalinas</h3>
+        <p>S/69.90</p>
+        <button class="add-to-cart-btn" data-id="7" data-name="Chalinas" data-price="69.90" data-img="img/Chalinas.jpg">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="img/Gorras.jpg" alt="Gorras">
+        <h3>Gorras</h3>
+        <p>S/69.90</p>
+        <button class="add-to-cart-btn" data-id="8" data-name="Gorras" data-price="69.90" data-img="img/Gorras.jpg">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="img/ShortsAdidas.jpeg" alt="ShortsAdidas">
+        <h3>Shorts Adidas</h3>
+        <p>S/89.90</p>
+        <button class="add-to-cart-btn" data-id="9" data-name="Shorts Adidas" data-price="89.90" data-img="img/ShortsAdidas.jpeg">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="img/CalcetinesAdidas.webp" alt="Calcetines Adidas">
+        <h3>Calcetines Adidas</h3>
+        <p>S/49.90</p>
+        <button class="add-to-cart-btn" data-id="10" data-name="Calcetines Adidas" data-price="49.90" data-img="img/CalcetinesAdidas.webp">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="img/Chaleco.webp" alt="Chaleco">
+        <h3>Chaleco</h3>
+        <p>S/49.90</p>
+        <button class="add-to-cart-btn" data-id="11" data-name="Chaleco" data-price="49.90" data-img="img/Chaleco.webp">Agregar al carrito</button>
+      </div>
+
+      <div class="card">
+        <img src="img/Camisaa.avif" alt="Camisa">
+        <h3>Camisa</h3>
+        <p>S/49.90</p>
+        <button class="add-to-cart-btn" data-id="12" data-name="Camisa" data-price="49.90" data-img="img/Camisaa.avif">Agregar al carrito</button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    // JavaScript para la animación inicial
+    document.addEventListener('DOMContentLoaded', function() {
+      // Mostrar animación de marca al cargar
+      setTimeout(function() {
+        document.getElementById('splashScreen').classList.add('fade-out');
+        setTimeout(function() {
+          document.getElementById('splashScreen').style.display = 'none';
+        }, 1000);
+      }, 3000); // Mostrar durante 3 segundos
+
+      // JavaScript para el menú hamburguesa
+      const hamburger = document.getElementById('hamburger');
+      const menu = document.getElementById('menu');
+
+      if (hamburger && menu) {
+        hamburger.addEventListener('click', function() {
+          menu.classList.toggle('active');
+          hamburger.classList.toggle('active');
+        });
+
+        // Cerrar menú al hacer clic en un enlace
+        const menuLinks = document.querySelectorAll('.menu a');
+        menuLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            menu.classList.remove('active');
+            hamburger.classList.remove('active');
+          });
+        });
+      }
+
+      // Funcionalidad del carrito de compras
+      const cartIcon = document.getElementById('cartIcon');
+      const cartSidebar = document.getElementById('cartSidebar');
+      const closeCart = document.getElementById('closeCart');
+      const cartOverlay = document.getElementById('cartOverlay');
+      const cartItems = document.getElementById('cartItems');
+      const cartCount = document.getElementById('cartCount');
+      const cartTotal = document.getElementById('cartTotal');
+      const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+      const checkoutBtn = document.getElementById('checkoutBtn');
+
+      let cart = [];
+
+      // Abrir carrito
+      cartIcon.addEventListener('click', function(e) {
+        e.preventDefault();
+        cartSidebar.classList.add('active');
+        cartOverlay.classList.add('active');
+      });
+
+      // Cerrar carrito
+      closeCart.addEventListener('click', closeCartFunction);
+      cartOverlay.addEventListener('click', closeCartFunction);
+
+      function closeCartFunction() {
+        cartSidebar.classList.remove('active');
+        cartOverlay.classList.remove('active');
+      }
+
+      // Agregar productos al carrito
+      addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const id = this.dataset.id;
+          const name = this.dataset.name;
+          const price = parseFloat(this.dataset.price);
+          const img = this.dataset.img;
+          
+          // Verificar si el producto ya está en el carrito
+          const existingItem = cart.find(item => item.id === id);
+          
+          if (existingItem) {
+            existingItem.quantity++;
+          } else {
+            cart.push({
+              id,
+              name,
+              price,
+              img,
+              quantity: 1
+            });
+          }
+          
+          updateCart();
+          
+          // Animación de confirmación
+          this.classList.add('added');
+          setTimeout(() => {
+            this.classList.remove('added');
+          }, 1000);
+        });
+      });
+
+      // Actualizar carrito
+      function updateCart() {
+        cartItems.innerHTML = '';
+        let total = 0;
+        let count = 0;
+        
+        if (cart.length === 0) {
+          cartItems.innerHTML = '<p class="empty-cart">Tu carrito está vacío</p>';
+        } else {
+          cart.forEach(item => {
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+            count += item.quantity;
+            
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+            cartItem.innerHTML = `
+              <img src="${item.img}" alt="${item.name}">
+              <div class="cart-item-details">
+                <h4>${item.name}</h4>
+                <p>S/${item.price.toFixed(2)} x ${item.quantity}</p>
+              </div>
+              <div class="cart-item-actions">
+                <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                <span>${item.quantity}</span>
+                <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                <button class="remove-btn" data-id="${item.id}">&times;</button>
+              </div>
+            `;
+            
+            cartItems.appendChild(cartItem);
+          });
+        }
+        
+        cartCount.textContent = count;
+        cartTotal.textContent = `S/${total.toFixed(2)}`;
+        
+        // Agregar event listeners a los botones de cantidad y eliminar
+        document.querySelectorAll('.decrease').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const id = this.dataset.id;
+            const item = cart.find(item => item.id === id);
+            if (item.quantity > 1) {
+              item.quantity--;
+            } else {
+              cart = cart.filter(item => item.id !== id);
+            }
+            updateCart();
+          });
+        });
+        
+        document.querySelectorAll('.increase').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const id = this.dataset.id;
+            const item = cart.find(item => item.id === id);
+            item.quantity++;
+            updateCart();
+          });
+        });
+        
+        document.querySelectorAll('.remove-btn').forEach(btn => {
+          btn.addEventListener('click', function() {
+            const id = this.dataset.id;
+            cart = cart.filter(item => item.id !== id);
+            updateCart();
+          });
+        });
+      }
+
+      // Finalizar compra
+      checkoutBtn.addEventListener('click', function() {
+        if (cart.length === 0) {
+          alert('Tu carrito está vacío. Agrega algunos productos primero.');
+          return;
+        }
+        
+        alert('¡Gracias por tu compra! Serás redirigido para completar el pago.');
+        cart = [];
+        updateCart();
+        closeCartFunction();
+      });
+
+      // Inicializar carrito
+      updateCart();
+    });
+  </script>
+</body>
+</html>

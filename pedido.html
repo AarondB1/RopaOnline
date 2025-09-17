@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedido - Luxe Line</title>
+  <link rel="stylesheet" href="estilos.css">
+  <!-- Agregar Font Awesome para iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="pedido-body">
+  <!-- Partículas de fondo elegante -->
+  <div class="particles-container">
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </div>
+  
+  <nav class="nav-bar">
+    <h1>Luxe Line</h1>
+    <ul class="menu">
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="prendas.html">Prendas</a></li>
+      <li><a href="pedido.html">Pedido</a></li>
+      <li><a href="nosotros.html">Nosotros</a></li>
+    </ul>
+  </nav>
+
+  <div class="pedido-container">
+    <div class="form-header">
+      <h2 class="pedido-h2 animate-text">Realizar Pedido</h2>
+      <p class="pedido-subtitle">Complete el formulario y nos contactaremos con usted</p>
+    </div>
+    
+    <form id="pedido-form" class="pedido-form">
+      <div class="form-group">
+        <label for="nombre">
+          <i class="fas fa-user"></i> Nombre completo:
+        </label>
+        <input type="text" id="nombre" name="nombre" required placeholder="Ingrese su nombre completo">
+        <div class="input-line"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">
+          <i class="fas fa-envelope"></i> Correo electrónico:
+        </label>
+        <input type="email" id="email" name="email" required placeholder="ejemplo@correo.com">
+        <div class="input-line"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="telefono">
+          <i class="fas fa-phone"></i> Teléfono:
+        </label>
+        <input type="tel" id="telefono" name="telefono" placeholder="+51 999 999 999">
+        <div class="input-line"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="producto">
+          <i class="fas fa-tshirt"></i> Producto:
+        </label>
+        <select id="producto" name="producto" required>
+          <option value="">Selecciona un producto</option>
+          <option value="Polera Tommy Hilfiger">Polera Tommy Hilfiger - S/80.00</option>
+          <option value="Chaqueta">Chaqueta - S/100.00</option>
+          <option value="Pantalon de Vestir">Pantalon de Vestir - S/85.00</option>
+          <option value="Zapato">Zapato - S/89.90</option>
+          <option value="Playeras">Playeras - S/69.90</option>
+          <option value="Shorts WARDROBE">Shorts WARDROBE - S/49.00</option>
+        </select>
+        <div class="input-line"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="cantidad">
+          <i class="fas fa-list-ol"></i> Cantidad:
+        </label>
+        <input type="number" id="cantidad" name="cantidad" min="1" value="1" required>
+        <div class="input-line"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="direccion">
+          <i class="fas fa-map-marker-alt"></i> Dirección de envío:
+        </label>
+        <input type="text" id="direccion" name="direccion" placeholder="Ingrese su dirección para delivery">
+        <div class="input-line"></div>
+      </div>
+
+      <div class="form-group">
+        <label for="mensaje">
+          <i class="fas fa-comment"></i> Mensaje adicional:
+        </label>
+        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Especificaciones adicionales de su pedido..."></textarea>
+        <div class="input-line"></div>
+      </div>
+
+      <div class="metodo-pago">
+        <p><i class="fas fa-credit-card"></i> Método de pago:</p>
+        <div class="opciones-pago">
+          <label class="opcion-pago">
+            <input type="radio" name="pago" value="efectivo" checked>
+            <i class="fas fa-money-bill-wave"></i> Efectivo
+          </label>
+          <label class="opcion-pago">
+            <input type="radio" name="pago" value="transferencia">
+            <i class="fas fa-exchange-alt"></i> Transferencia
+          </label>
+          <label class="opcion-pago">
+            <input type="radio" name="pago" value="yape">
+            <i class="fas fa-mobile-alt"></i> Yape
+          </label>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        <i class="fas fa-paper-plane"></i> Enviar Pedido
+      </button>
+    </form>
+  </div>
+
+  <!-- Sección de contacto rápido -->
+  <div class="quick-contact">
+    <h3><i class="fas fa-headset"></i> ¿Necesitas ayuda?</h3>
+    <p>Contáctanos directamente:</p>
+    <div class="contact-buttons">
+      <a href="https://wa.me/51970253397" class="contact-btn whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="https://facebook.com/luxeline" class="contact-btn facebook" target="_blank">
+        <i class="fab fa-facebook-f"></i> Facebook
+      </a>
+      <a href="tel:+51970253397" class="contact-btn phone">
+        <i class="fas fa-phone"></i> Llamar
+      </a>
+      <a href="#" class="contact-btn delivery">
+        <i class="fas fa-truck"></i> Delivery
+      </a>
+    </div>
+  </div>
+
+  <!-- Iconos flotantes de redes sociales -->
+  <div class="floating-social">
+    <a href="https://wa.me/51970253397" class="float-btn whatsapp-float" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="https://facebook.com/luxeline" class="float-btn facebook-float" target="_blank">
+      <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="https://instagram.com/luxeline" class="float-btn instagram-float" target="_blank">
+      <i class="fab fa-instagram"></i>
+    </a>
+    <a href="#" class="float-btn delivery-float">
+      <i class="fas fa-truck"></i>
+    </a>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('pedido-form');
+      
+      // Animación de elementos al cargar
+      const formGroups = document.querySelectorAll('.form-group');
+      formGroups.forEach((group, index) => {
+        group.style.animationDelay = `${index * 0.1}s`;
+        group.classList.add('fade-in-up');
+      });
+      
+      // Efecto de focus en inputs
+      const inputs = document.querySelectorAll('input, textarea, select');
+      inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+          this.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+          if (this.value === '') {
+            this.parentElement.classList.remove('focused');
+          }
+        });
+      });
+      
+      // Validación y envío del formulario
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Validación básica
+        const nombre = document.getElementById('nombre').value;
+        const email = document.getElementById('email').value;
+        const producto = document.getElementById('producto').value;
+        
+        if (!nombre || !email || !producto) {
+          showNotification('Por favor, complete todos los campos obligatorios', 'error');
+          return;
+        }
+        
+        // Simular envío
+        const submitBtn = document.querySelector('.submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+        submitBtn.disabled = true;
+        
+        setTimeout(function() {
+          showNotification('¡Pedido enviado con éxito! Nos contactaremos contigo pronto.', 'success');
+          form.reset();
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+          
+          // Animación de éxito
+          document.querySelector('.pedido-container').classList.add('success-animation');
+          setTimeout(() => {
+            document.querySelector('.pedido-container').classList.remove('success-animation');
+          }, 2000);
+        }, 2000);
+      });
+      
+      // Mostrar notificación
+      function showNotification(message, type) {
+        const notification = document.createElement('div');
+        notification.className = `notification ${type}`;
+        notification.innerHTML = `
+          <i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'}"></i>
+          <span>${message}</span>
+        `;
+        
+        document.body.appendChild(notification);
+        
+        // Mostrar con animación
+        setTimeout(() => {
+          notification.classList.add('show');
+        }, 10);
+        
+        // Ocultar después de 5 segundos
+        setTimeout(() => {
+          notification.classList.remove('show');
+          setTimeout(() => {
+            document.body.removeChild(notification);
+          }, 300);
+        }, 5000);
+      }
+    });
+  </script>
+</body>
+</html>
